@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111827">
+    <meta name="description" content="AmitOS - Personal Growth & Life Dashboard">
+    <title>AmitOS — Personal Growth OS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="toastContainer" class="toast-container"></div>
+
+    <div class="app-shell">
+
+        <!-- Mobile Header -->
+        <header class="mobile-header">
+            <button id="mobileMenuBtn" class="icon-btn" aria-label="Open menu">☰</button>
+            <div class="brand">
+                <span class="brand-mark">A</span>
+                <span>AmitOS</span>
+            </div>
+            <button class="icon-btn" data-page="settings" aria-label="Settings">⚙</button>
+        </header>
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-mark">A</div>
+                <div>
+                    <strong>AmitOS</strong>
+                    <small>Personal Growth OS</small>
+                </div>
+            </div>
+
+            <nav class="nav-list" aria-label="Main navigation">
+                <button class="nav-item active" data-page="dashboard">🏠 <span>Dashboard</span></button>
+                <button class="nav-item" data-page="portfolio">👤 <span>Portfolio</span></button>
+                <button class="nav-item" data-page="study">📚 <span>Study</span></button>
+                <button class="nav-item" data-page="habits">✓ <span>Habits</span></button>
+                <button class="nav-item" data-page="improvements">📈 <span>Improvements</span></button>
+                <button class="nav-item" data-page="tasks">🎯 <span>Tasks</span></button>
+                <button class="nav-item" data-page="journal">📖 <span>Journal</span></button>
+                <button class="nav-item" data-page="goals">🚀 <span>Goals</span></button>
+                <button class="nav-item" data-page="achievements">🏆 <span>Achievements</span></button>
+                <button class="nav-item" data-page="statistics">📊 <span>Statistics</span></button>
+                <button class="nav-item" data-page="settings">⚙ <span>Settings</span></button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="mini-progress">
+                    <span>Today's progress</span>
+                    <strong id="sidebarProgressText">0%</strong>
+                </div>
+                <div class="progress-track">
+                    <div id="sidebarProgressBar" class="progress-fill"></div>
+                </div>
+            </div>
+        </aside>
+
+        <div id="overlay" class="overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div id="pageContent"></div>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2 id="modalTitle">Form</h2>
+                <button class="icon-btn" data-close-modal aria-label="Close">×</button>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Confirm Dialog -->
+    <div id="confirmModal" class="modal hidden" role="dialog" aria-modal="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-card small-modal">
+            <h2 id="confirmTitle">Are you sure?</h2>
+            <p id="confirmMessage"></p>
+            <div class="modal-actions">
+                <button id="confirmCancel" class="btn secondary">Cancel</button>
+                <button id="confirmOk" class="btn danger">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
